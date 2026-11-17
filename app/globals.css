@@ -939,3 +939,258 @@ h1, h2, h3, p { margin-top: 0; }
 .vision-mission-standalone article ul {
   font-size: 13px;
 }
+
+/* ==========================================
+   ARINDAMA — DIRECTOR SECTION
+   ========================================== */
+
+.director-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 100px 0 110px;
+  background:
+    radial-gradient(
+      circle at 88% 22%,
+      rgba(65, 151, 211, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #f5f9fd 0%, #edf5fb 100%);
+}
+
+/* Ornamen lingkaran di background */
+.director-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 80px;
+  right: -125px;
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(37, 133, 201, 0.16);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.director-section::after {
+  content: "ARINDAMA";
+  position: absolute;
+  z-index: -1;
+  right: 4%;
+  bottom: 25px;
+  color: rgba(20, 47, 76, 0.035);
+  font-size: clamp(55px, 10vw, 130px);
+  font-weight: 800;
+  letter-spacing: 9px;
+  pointer-events: none;
+}
+
+/* Judul bagian */
+.director-heading {
+  position: relative;
+  max-width: 650px;
+  margin-bottom: 55px;
+}
+
+.director-heading h2 {
+  margin: 18px 0;
+  color: #142f4c;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.director-heading h2 em {
+  color: #2585c9;
+  font-style: normal;
+}
+
+.director-heading p {
+  max-width: 510px;
+  color: #64778a;
+  line-height: 1.8;
+}
+
+/* Layout foto dan informasi */
+.director-section .director-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(45px, 8vw, 110px);
+}
+
+/* Foto pimpinan */
+.director-section .director-photo {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 4.7;
+  overflow: visible;
+  background: #fff;
+  border: 1px solid #d8e5ef;
+  box-shadow: 18px 18px 0 rgba(77, 157, 211, 0.13);
+}
+
+.director-section .director-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.director-photo-mark {
+  position: absolute;
+  right: -16px;
+  bottom: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background: #176cae;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Informasi pimpinan */
+.director-section .director-info {
+  min-width: 0;
+  max-width: 620px;
+  padding: 20px 0;
+}
+
+.director-section .director-info h2 {
+  max-width: 100%;
+  margin: 18px 0 14px;
+  color: #142f4c;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.18;
+  letter-spacing: -1.4px;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.director-section .director-role {
+  margin: 0 0 8px;
+  color: #1680c8;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.director-section .director-info > span {
+  color: #718398;
+  font-size: 14px;
+}
+
+.director-divider {
+  width: 65px;
+  height: 3px;
+  margin: 28px 0;
+  background: #2585c9;
+}
+
+.director-description {
+  max-width: 490px;
+  color: #65788b;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.director-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 35px;
+  padding-left: 16px;
+  border-left: 2px solid #80bce3;
+}
+
+.director-signature span {
+  color: #718398;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.director-signature strong {
+  color: #176cae;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .director-section .director-layout {
+    grid-template-columns: minmax(240px, 350px) minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .director-section .director-info h2 {
+    font-size: clamp(30px, 4vw, 40px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .director-section {
+    padding: 70px 0 80px;
+  }
+
+  .director-heading {
+    margin-bottom: 40px;
+  }
+
+  .director-heading h2 {
+    font-size: 38px;
+  }
+
+  .director-section .director-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .director-section .director-photo {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .director-section .director-info {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .director-section .director-info h2 {
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.2;
+  }
+
+  .director-section::before {
+    top: 30px;
+    right: -110px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .director-section::after {
+    font-size: 48px;
+    letter-spacing: 4px;
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 400px) {
+  .director-heading h2 {
+    font-size: 32px;
+  }
+
+  .director-section .director-info h2 {
+    font-size: 30px;
+  }
+
+  .director-section .director-photo {
+    width: calc(100% - 15px);
+  }
+}
