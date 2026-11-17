@@ -6,7 +6,6 @@ import { ArrowDown, ArrowRight, ArrowUpRight, AtSign, Building2, Check, Globe, H
 import { SiteHeader } from './site-header'
 import { BrandIdentity } from './brand-identity'
 import { ClientPartners } from './client-partners'
-import { LegalitiesSection } from './legalities-section'
 import { ContactForm } from './contact-form'
 import { content } from '@/src/config/content'
 import { images } from '@/src/config/images'
