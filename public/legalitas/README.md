@@ -1,1 +1,0 @@
-Dokumen legalitas perusahaan
