@@ -7,12 +7,10 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
-  AtSign,
   Check,
   Globe,
   Headphones,
-  MapPin,
-  Phone,
+  MessageCircle,
   ShieldCheck,
   Sparkles,
   Users,
@@ -22,7 +20,6 @@ import {
 import { SiteHeader } from './site-header'
 import { BrandIdentity } from './brand-identity'
 import { ClientPartners } from './client-partners'
-import { ContactForm } from './contact-form'
 import { content } from '@/src/config/content'
 import { images } from '@/src/config/images'
 import { siteConfig } from '@/src/config/site-config'
@@ -388,107 +385,49 @@ export function CorporateSite() {
           <ClientPartners />
         </section>
 
-        {/* 7. KONTAK */}
-        <section className="contact-section section-pad" id="kontak">
-          <div className="container contact-layout">
-            <div className="contact-intro reveal">
-              <Eyebrow>HUBUNGI KAMI</Eyebrow>
+        
+{/* 7. KONTAK */}
+<section className="contact-section section-pad" id="kontak">
+  <div className="container">
+    <div className="contact-simple reveal">
+      <span className="contact-simple-label">
+        PT ARINDAMA TUNGGA MADANI
+      </span>
 
-              <h2>Mari diskusikan kebutuhan Anda.</h2>
+      <h2>
+        Mari bekerja sama
+        <br />
+        bersama Arindama.
+      </h2>
 
-              <p>
-                Hubungi tim kami untuk mendiskusikan kebutuhan layanan
-                outsourcing dan operasional perusahaan Anda.
-              </p>
+      <p>
+        Diskusikan kebutuhan tenaga kerja dan pengelolaan
+        fasilitas perusahaan Anda bersama tim kami.
+      </p>
 
-              <div className="contact-detail">
-                <span className="detail-icon">
-                  <Phone size={19} />
-                </span>
-                <div>
-                  <small>WHATSAPP</small>
-                  <a
-                    href={`https://wa.me/${siteConfig.whatsappNumber}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {siteConfig.whatsappDisplay}
-                  </a>
-                </div>
-              </div>
+      <a
+        className="button button-light contact-wa-button"
+        href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
+          'Halo PT Arindama Tungga Madani, saya ingin berkonsultasi mengenai layanan perusahaan.'
+        )}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <MessageCircle size={19} />
+        Hubungi Kami via WhatsApp
+        <ArrowUpRight size={17} />
+      </a>
 
-              <div className="contact-detail">
-                <span className="detail-icon">
-                  <Headphones size={19} />
-                </span>
-                <div>
-                  <small>EMAIL</small>
-                  <a href={`mailto:${siteConfig.email}`}>
-                    {siteConfig.email}
-                  </a>
-                </div>
-              </div>
+      <span className="contact-simple-number">
+        {siteConfig.whatsappDisplay}
+      </span>
 
-              <div className="contact-detail">
-                <span className="detail-icon">
-                  <MapPin size={19} />
-                </span>
-                <div>
-                  <small>HEAD OFFICE</small>
-                  <p>{siteConfig.address}</p>
-                </div>
-              </div>
-
-              <div className="contact-detail">
-                <span className="detail-icon">
-                  <AtSign size={19} />
-                </span>
-                <div>
-                  <small>INSTAGRAM</small>
-                  <a
-                    href={siteConfig.socials.instagram}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    @pt.arindamatungga
-                  </a>
-                </div>
-              </div>
-
-              <div className="contact-detail">
-                <span className="detail-icon">
-                  <Globe size={19} />
-                </span>
-                <div>
-                  <small>WEBSITE</small>
-                  <a
-                    href={siteConfig.website}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    www.arindamatunggamadani.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="contact-aside">
-                Setiap kebutuhan dimulai dengan percakapan yang tepat.
-              </div>
-            </div>
-
-            <div className="contact-panel reveal">
-              <div className="form-heading">
-                <span>01 — MULAI PERCAKAPAN</span>
-                <h3>Kirimkan kebutuhan Anda</h3>
-                <p>
-                  Lengkapi formulir berikut untuk menyiapkan pesan WhatsApp.
-                </p>
-              </div>
-
-              <ContactForm />
-            </div>
-          </div>
-        </section>
+      <div className="contact-simple-decoration">
+        AT
+      </div>
+    </div>
+  </div>
+</section>
       </main>
 
       {/* FOOTER */}
