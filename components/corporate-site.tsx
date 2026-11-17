@@ -8,7 +8,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   AtSign,
-  Building2,
   Check,
   Globe,
   Headphones,
@@ -33,7 +32,7 @@ const advantageIcons = [
   Workflow,
   Sparkles,
   Headphones,
-  Building2,
+  Check,
   ShieldCheck,
 ]
 
@@ -42,16 +41,9 @@ const nav = [
   ['Tentang Kami', '#tentang'],
   ['Keunggulan', '#keunggulan'],
   ['Layanan', '#layanan'],
-  ['Pimpinan & Tim', '#pimpinan'],
+  ['Pimpinan', '#pimpinan'],
   ['Mitra & Klien', '#mitra'],
   ['Kontak', '#kontak'],
-]
-
-const companyTeam = [
-  { name: 'Moh Choiril Anwar', role: 'HRD' },
-  { name: 'Ngatwinto, S.M.', role: 'Operasional' },
-  { name: 'Dewi Dwi Ningtiyas', role: 'Keuangan' },
-  { name: 'Dodie', role: 'Marketing' },
 ]
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -84,6 +76,7 @@ export function CorporateSite() {
     )
 
     nodes.forEach(node => observer.observe(node))
+
     return () => observer.disconnect()
   }, [])
 
@@ -110,6 +103,7 @@ export function CorporateSite() {
           <div className="container hero-banner-content">
             <div className="hero-banner-copy">
               <Eyebrow>{siteConfig.tagline}</Eyebrow>
+
               <h1>{content.hero.title}</h1>
               <p>{content.hero.description}</p>
 
@@ -127,6 +121,7 @@ export function CorporateSite() {
                 <span className="hero-proof-icon">
                   <ShieldCheck size={18} />
                 </span>
+
                 <span>
                   <b>Mitra operasional terpercaya</b>
                   <small>Layanan profesional dan terstruktur</small>
@@ -181,6 +176,7 @@ export function CorporateSite() {
 
             <div className="about-copy reveal">
               <Eyebrow>TENTANG KAMI</Eyebrow>
+
               <h2>Mitra yang memahami kebutuhan operasional Anda.</h2>
 
               <p>{content.about.description}</p>
@@ -208,6 +204,7 @@ export function CorporateSite() {
               <article className="reveal">
                 <span>02 / MISI</span>
                 <h3>Misi Kami</h3>
+
                 <ul>
                   {content.about.mission.map(item => (
                     <li key={item}>{item}</li>
@@ -219,7 +216,10 @@ export function CorporateSite() {
         </section>
 
         {/* 3. KEUNGGULAN */}
-        <section className="advantages-section section-pad" id="keunggulan">
+        <section
+          className="advantages-section section-pad"
+          id="keunggulan"
+        >
           <div className="container advantage-layout">
             <div className="advantage-sticky reveal">
               <Eyebrow>MENGAPA ARINDAMA</Eyebrow>
@@ -230,8 +230,8 @@ export function CorporateSite() {
 
               <p>
                 Berpengalaman melayani sektor swasta dan pemerintahan,
-                didukung tenaga kerja terlatih, SOP terintegrasi, serta
-                pengawasan operasional.
+                didukung tenaga kerja terlatih, SOP terintegrasi,
+                serta pengawasan operasional.
               </p>
 
               <a href="#kontak" className="button button-outline">
@@ -327,17 +327,19 @@ export function CorporateSite() {
           </div>
         </section>
 
-        {/* 5. PIMPINAN & TIM */}
+        {/* 5. PIMPINAN — TANPA BAGIAN TIM */}
         <section className="director-section section-pad" id="pimpinan">
           <div className="container">
-            <div className="section-heading centered reveal">
-              <Eyebrow>PIMPINAN & TIM</Eyebrow>
+            <div className="director-heading reveal">
+              <Eyebrow>KEPEMIMPINAN PERUSAHAAN</Eyebrow>
+
               <h2>
-                Orang-orang di balik <em>Arindama.</em>
+                Pimpinan <em>Arindama.</em>
               </h2>
+
               <p>
-                Didukung tim yang solid, profesional, dan berpengalaman
-                dalam menjalankan setiap tanggung jawab perusahaan.
+                Kepemimpinan yang berkomitmen membangun pelayanan
+                profesional, terpercaya, dan berkualitas.
               </p>
             </div>
 
@@ -351,36 +353,32 @@ export function CorporateSite() {
                   priority
                   sizes="(max-width: 700px) 85vw, 420px"
                 />
+
+                <span className="director-photo-mark">AT</span>
               </div>
 
               <div className="director-info reveal">
-                <Eyebrow>KEPEMIMPINAN KAMI</Eyebrow>
+                <Eyebrow>DIREKTUR UTAMA</Eyebrow>
+
                 <h2>Tina Putri Perdani, S.Pd.</h2>
+
                 <p className="director-role">Direktur Utama</p>
+
                 <span>PT Arindama Tungga Madani</span>
+
+                <div className="director-divider" />
+
+                <p className="director-description">
+                  Memimpin dan mengarahkan perusahaan dalam memberikan
+                  solusi layanan tenaga kerja dan pengelolaan fasilitas
+                  yang profesional bagi setiap mitra.
+                </p>
+
+                <div className="director-signature">
+                  <span>PT ARINDAMA TUNGGA MADANI</span>
+                  <strong>Professional • Trusted • Quality</strong>
+                </div>
               </div>
-            </div>
-
-            <div className="team-heading reveal">
-              <Eyebrow>STRUKTUR TIM</Eyebrow>
-              <h3>Tim yang bekerja dalam satu tujuan.</h3>
-            </div>
-
-            <div className="team-grid">
-              {companyTeam.map((member, i) => (
-                <article className="team-card reveal" key={member.role}>
-                  <span className="team-number">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-
-                  <span className="team-mark">
-                    <Users size={22} strokeWidth={1.5} />
-                  </span>
-
-                  <h3>{member.name}</h3>
-                  <p>{member.role}</p>
-                </article>
-              ))}
             </div>
           </div>
         </section>
