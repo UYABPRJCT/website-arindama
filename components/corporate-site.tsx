@@ -81,6 +81,25 @@ export function CorporateSite() {
 
       <ClientPartners />
 
+      <section className="director-section section-pad" id="pimpinan">
+  <div className="container director-layout">
+    <div className="director-photo reveal">
+      <Image
+        src="/images/pimpinan.png"
+        alt="Tina Putri Perdani, Direktur Utama PT Arindama Tungga Madani"
+        width={500}
+        height={600}
+        priority
+      />
+    </div>
+    <div className="director-info reveal">
+      <Eyebrow>KEPEMIMPINAN KAMI</Eyebrow>
+      <h2>Tina Putri Perdani, S.Pd.</h2>
+      <p>Direktur Utama</p>
+      <span>PT Arindama Tungga Madani</span>
+    </div>
+  </div>
+</section>
       <section className="values-section section-pad" id="nilai"><div className="container"><div className="section-heading centered reveal"><Eyebrow>PRINSIP KAMI</Eyebrow><h2>Nilai yang mendasari<br />setiap layanan.</h2><p>Landasan untuk membangun hubungan kerja yang profesional dan bertanggung jawab.</p></div>
         <div className="values-grid">{content.values.map((item, i) => { const Icon = valueIcons[i]; return <article className="value-card reveal" key={item.title}><span className="value-icon"><Icon size={21} strokeWidth={1.6} /></span><span className="card-number">0{i + 1}</span><h3>{item.title}</h3><p>{item.text}</p></article> })}</div>
       </div></section>
