@@ -1,7 +1,7 @@
 export const siteConfig = {
   companyName: 'PT Arindama Tungga Madani',
   shortName: 'Arindama',
-  tagline: 'The Strategic Partner For Facility Services',
+  tagline: 'Mitra Strategis untuk Layanan Fasilitas',
   businessCategory: 'Jasa pelayanan, facility services, dan penyediaan sumber daya manusia.',
   logoPath: '/images/logo.png',
   whatsappNumber: '6285604036090',
