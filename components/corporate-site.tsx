@@ -75,7 +75,6 @@ export function CorporateSite() {
         <div className="process-grid">{content.process.map(([title, text], i) => <article className="process-step reveal" key={title}><span className="process-number">0{i + 1}</span><span className="process-rule" /><h3>{title}</h3><p>{text}</p></article>)}</div>
       </div></section>
 
-      <LegalitiesSection />
 
       <section className="cta-band"><div className="cta-pattern" /><div className="container cta-content reveal"><div><Eyebrow>MITRA OPERASIONAL ANDA</Eyebrow><h2>{content.cta.title}</h2><p>{content.cta.text}</p></div><a className="button button-light" href="#kontak">Hubungi Kami <ArrowUpRight size={17} /></a></div></section>
 
