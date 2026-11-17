@@ -13,7 +13,7 @@ import { siteConfig } from '@/src/config/site-config'
 
 const valueIcons = [ShieldCheck, Sparkles, Check, Users, Headphones]
 const advantageIcons = [Users, Workflow, Sparkles, Headphones, Building2, ShieldCheck]
-const nav = [['Beranda', '#beranda'], ['Tentang Kami', '#tentang'], ['Layanan', '#layanan'], ['Keunggulan', '#keunggulan'], ['Industri', '#industri'], ['Kontak', '#kontak']]
+const nav = [['Beranda', '#beranda'], ['Tentang Kami', '#tentang'], ['Layanan', '#layanan'], ['Keunggulan', '#keunggulan'], ['Kontak', '#kontak']]
 
 function Eyebrow({ children }: { children: React.ReactNode }) { return <span className="eyebrow"><i />{children}</span> }
 
@@ -31,18 +31,45 @@ export function CorporateSite() {
   return <>
     <SiteHeader />
     <main>
-      <section className="hero" id="beranda">
+      <section className="hero hero--banner" id="beranda">
+        <div className="hero-banner-image">
+          <Image
+            src={images.hero}
+            alt="Layanan profesional PT Arindama Tungga Madani di lingkungan perkantoran"
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="hero-banner-overlay" />
         <div className="hero-grid" />
-        <div className="hero-inner container">
-          <div className="hero-copy"><Eyebrow>{siteConfig.tagline}</Eyebrow>
-            <h1>{content.hero.title}</h1><p>{content.hero.description}</p>
-            <div className="hero-actions"><a className="button button-light" href="#kontak">Konsultasi Sekarang <ArrowUpRight size={17} /></a><a className="text-link hero-link" href="#layanan">Jelajahi Layanan <ArrowRight size={17} /></a></div>
-            <div className="hero-note"><span className="note-line" />Layanan profesional, pendekatan terstruktur</div>
+        <div className="container hero-banner-content">
+          <div className="hero-banner-copy">
+            <Eyebrow>{siteConfig.tagline}</Eyebrow>
+            <h1>{content.hero.title}</h1>
+            <p>{content.hero.description}</p>
+            <div className="hero-actions">
+              <a className="button button-light" href="#kontak">
+                Konsultasi Sekarang <ArrowUpRight size={17} />
+              </a>
+              <a className="text-link hero-link" href="#layanan">
+                Jelajahi Layanan <ArrowRight size={17} />
+              </a>
+            </div>
+            <div className="hero-banner-proof">
+              <span className="hero-proof-icon"><ShieldCheck size={18} /></span>
+              <span><b>Mitra operasional terpercaya</b><small>Layanan profesional dan terstruktur</small></span>
+            </div>
           </div>
-          <div className="hero-visual"><div className="hero-photo"><Image src={images.hero} alt="Petugas keamanan profesional di lobi gedung perkantoran modern" fill priority sizes="(max-width: 900px) 100vw, 52vw" /></div><div className="hero-photo-shade" />
-            <div className="photo-caption"><span className="caption-icon"><ShieldCheck size={19} /></span><span><b>Operasional yang tertata</b><small>Dimulai dari mitra yang tepat</small></span></div><span className="hero-index">01 — 06</span>
+          <div className="hero-banner-side">
+            <span className="hero-banner-index">PT ARINDAMA TUNGGA MADANI</span>
+            <span className="hero-banner-line" />
+            <span className="hero-banner-side-text">Mendukung operasional bisnis Anda</span>
           </div>
-        </div><a className="scroll-cue" href="#tentang" aria-label="Gulir ke Tentang Kami"><ArrowDown size={17} /></a>
+        </div>
+        <a className="scroll-cue" href="#tentang" aria-label="Gulir ke Tentang Kami">
+          <ArrowDown size={17} />
+        </a>
       </section>
 
       <section className="about-section section-pad" id="tentang"><div className="container about-layout">
