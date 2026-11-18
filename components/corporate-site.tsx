@@ -53,7 +53,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 }
 
 export function CorporateSite() {
-  const [activeService, setActiveService] = useState<number | null>(0)
+  const [activeService, setActiveService] = useState<number | null>(null)
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>('.reveal')
 
