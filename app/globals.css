@@ -1396,3 +1396,11 @@ h1, h2, h3, p { margin-top: 0; }
     height: 80px;
   }
 }
+
+/* Perbaikan foto Tentang Kami pada tampilan HP */
+@media (max-width: 768px) {
+  .about-image img {
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+}
