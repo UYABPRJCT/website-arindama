@@ -1398,13 +1398,31 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 
+/* ABOUT SECTION - MOBILE LAYOUT */
 @media (max-width: 768px) {
+  .about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .about-visual {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+    padding: 0 12px 30px;
+    display: flex;
+    justify-content: center;
+  }
+
   .about-image {
-    left: 50%;
-    right: auto;
-    width: min(72vw, 320px);
+    position: relative;
+    inset: auto;
+    width: min(78%, 320px);
+    height: auto;
     aspect-ratio: 2 / 3;
-    transform: translateX(-50%);
+    overflow: hidden;
+    margin: 0;
   }
 
   .about-image img {
@@ -1413,5 +1431,27 @@ h1, h2, h3, p { margin-top: 0; }
     object-fit: cover !important;
     object-position: center center !important;
   }
+
+  .image-outline {
+    position: absolute;
+    width: min(78%, 320px);
+    height: auto;
+    aspect-ratio: 2 / 3;
+    top: 24px;
+    right: 2%;
+    bottom: auto;
+  }
+
+  .image-label {
+    right: 0;
+    bottom: 48px;
+  }
+
+  .about-copy {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
 }
+
 
