@@ -2,7 +2,7 @@ const stock = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit
 
 export const images = {
   hero: '/images/hero.png',
-  about: stock('photo-1497366754035-f200968a6e72'),
+  about: '/images/about-arindama.png',
   services: {
     security: stock('photo-1560250097-0b93528c311a'),
     cleaning: stock('photo-1581578731548-c64695cc6952'),
