@@ -243,7 +243,7 @@ export function CorporateSite() {
 
               <div className="advantage-image">
                 <Image
-                  src={images.industries[0]}
+                  src="/images/team-arindama.png"
                   alt="Lingkungan kerja yang tertata"
                   fill
                   sizes="(max-width: 900px) 100vw, 40vw"
