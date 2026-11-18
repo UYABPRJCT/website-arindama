@@ -160,13 +160,19 @@ export function CorporateSite() {
               </div>
 
               <div className="image-label">
-                <span>AT</span>
-                <p>
-                  PT Arindama
-                  <br />
-                  Tungga Madani
-                </p>
-              </div>
+  <Image
+    src="/images/logo-arindama.png"
+    alt="Logo PT Arindama Tungga Madani"
+    width={48}
+    height={48}
+    style={{ objectFit: 'contain' }}
+  />
+  <p>
+    PT Arindama
+    <br />
+    Tungga Madani
+  </p>
+</div>
 
               <div className="image-outline" />
             </div>
