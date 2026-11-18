@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import {
   ArrowDown,
@@ -54,6 +54,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 export function CorporateSite() {
   useEffect(() => {
+    const [activeService, setActiveService] = useState<number | null>(0)
     const nodes = document.querySelectorAll<HTMLElement>('.reveal')
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -281,54 +282,87 @@ export function CorporateSite() {
         </section>
 
         {/* 4. LAYANAN — TANPA LAYANAN TAMBAHAN */}
-        <section className="services-section section-pad" id="layanan">
-          <div className="container">
-            <div className="section-heading split-heading reveal">
-              <div>
-                <Eyebrow>LAYANAN KAMI</Eyebrow>
-                <h2>
-                  Solusi layanan <em>Arindama.</em>
-                </h2>
+        
+<section className="services-section section-pad" id="layanan">
+  <div className="container">
+    <div className="section-heading split-heading reveal">
+      <div>
+        <Eyebrow>LAYANAN KAMI</Eyebrow>
+        <h2>
+          Solusi layanan Arindama.
+          <br />
+          <em>Profesional dan terpercaya.</em>
+        </h2>
+      </div>
+      <p>
+        Pilih layanan untuk melihat informasi lebih lanjut mengenai solusi
+        yang kami sediakan bagi kebutuhan operasional perusahaan Anda.
+      </p>
+    </div>
+
+    <div className="services-accordion">
+      {content.featuredServices.map((service, i) => {
+        const isOpen = activeService === i
+
+        return (
+          <article
+            className={`service-accordion-item ${isOpen ? 'is-open' : ''}`}
+            key={service.title}
+          >
+            <button
+              className="service-accordion-trigger"
+              type="button"
+              aria-expanded={isOpen}
+              aria-controls={`service-content-${i}`}
+              onClick={() => setActiveService(isOpen ? null : i)}
+            >
+              <span className="service-accordion-number">
+                0{i + 1}
+              </span>
+
+              <span className="service-accordion-title">
+                {service.title}
+              </span>
+
+              <span className="service-accordion-icon">
+                {isOpen ? '−' : '+'}
+              </span>
+            </button>
+
+            {isOpen && (
+              <div
+                className="service-accordion-content"
+                id={`service-content-${i}`}
+              >
+                <div className="service-accordion-image">
+                  <Image
+                    src={images.services[service.image]}
+                    alt={`Layanan ${service.title}`}
+                    fill
+                    sizes="(max-width: 700px) 100vw, 38vw"
+                  />
+                </div>
+
+                <div className="service-accordion-description">
+                  <span className="service-detail-label">
+                    LAYANAN 0{i + 1}
+                  </span>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                  <a href="#kontak" className="text-link">
+                    Konsultasikan layanan ini
+                    <ArrowUpRight size={17} />
+                  </a>
+                </div>
               </div>
+            )}
+          </article>
+        )
+      })}
+    </div>
+  </div>
+</section>
 
-              <p>
-                Kami menyediakan solusi tenaga kerja dan pengelolaan
-                fasilitas untuk mendukung kebutuhan operasional perusahaan.
-              </p>
-            </div>
-
-            <div className="services-grid">
-              {content.featuredServices.slice(0, 5).map((service, i) => (
-                <article
-                  className="service-card reveal"
-                  key={service.title}
-                >
-                  <div className="service-image">
-                    <Image
-                      src={images.services[service.image]}
-                      alt={`Ilustrasi layanan ${service.title}`}
-                      fill
-                      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                    />
-
-                    <span className="service-number">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-
-                    <span className="service-arrow">
-                      <ArrowUpRight size={20} />
-                    </span>
-                  </div>
-
-                  <div className="service-body">
-                    <h3>{service.title}</h3>
-                    <p>{service.text}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* 5. PIMPINAN — TANPA BAGIAN TIM */}
         <section className="director-section section-pad" id="pimpinan">
