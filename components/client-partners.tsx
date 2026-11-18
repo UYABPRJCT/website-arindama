@@ -22,7 +22,7 @@ const partners = [
 
 export function ClientPartners() {
   return (
-    <div className="partners-section section-pad">
+    <section className="partners-section section-pad" id="mitra">
       <div className="container">
         <div className="partners-heading">
           <span className="eyebrow">
@@ -35,25 +35,53 @@ export function ClientPartners() {
           </h2>
 
           <p>
-            Kami bangga dapat menjalin kerja sama dengan berbagai
-            perusahaan, instansi, dan organisasi.
+            Kami bangga dapat menjalin kerja sama dengan berbagai perusahaan,
+            instansi, dan organisasi.
           </p>
         </div>
 
-        <div className="partners-grid">
-          {partners.map((partner, index) => (
-            <div className="partner-logo" key={partner.name}>
+        <div
+          className="partners-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gap: '24px',
+            alignItems: 'center',
+          }}
+        >
+          {partners.map((partner) => (
+            <div
+              className="partner-logo"
+              key={partner.name}
+              title={partner.name}
+              style={{
+                height: '130px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '16px',
+                background: '#ffffff',
+                border: '1px solid #edf0f4',
+                borderRadius: '10px',
+              }}
+            >
               <Image
                 src={partner.logo}
                 alt={`Logo ${partner.name}`}
-                width={280}
-                height={150}
-                sizes="(max-width: 600px) 45vw, (max-width: 1000px) 30vw, 20vw"
+                width={180}
+                height={90}
+                sizes="(max-width: 600px) 45vw, (max-width: 1000px) 30vw, 180px"
+                style={{
+                  width: '100%',
+                  height: '90px',
+                  maxWidth: '180px',
+                  objectFit: 'contain',
+                }}
               />
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
