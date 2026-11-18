@@ -53,8 +53,8 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 }
 
 export function CorporateSite() {
+  const [activeService, setActiveService] = useState<number | null>(0)
   useEffect(() => {
-    const [activeService, setActiveService] = useState<number | null>(0)
     const nodes = document.querySelectorAll<HTMLElement>('.reveal')
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
