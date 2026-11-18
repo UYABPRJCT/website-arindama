@@ -1454,4 +1454,156 @@ h1, h2, h3, p { margin-top: 0; }
   }
 }
 
+/* SERVICES ACCORDION */
+.services-accordion {
+  margin-top: 48px;
+  border-top: 1px solid #dce5ee;
+}
+
+.service-accordion-item {
+  border-bottom: 1px solid #dce5ee;
+}
+
+.service-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 25px 8px;
+  border: 0;
+  background: transparent;
+  color: #142d4e;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.service-accordion-trigger:hover,
+.service-accordion-item.is-open .service-accordion-trigger {
+  background: #f4f8fc;
+}
+
+.service-accordion-number {
+  color: #7b9bbd;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 32px;
+}
+
+.service-accordion-title {
+  flex: 1;
+  font-size: clamp(18px, 2vw, 23px);
+  font-weight: 600;
+}
+
+.service-accordion-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d4e1ee;
+  border-radius: 50%;
+  color: #315d88;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.service-accordion-item.is-open .service-accordion-icon {
+  background: #17395f;
+  color: white;
+  border-color: #17395f;
+}
+
+.service-accordion-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 36px;
+  padding: 8px 8px 36px 64px;
+  animation: serviceReveal 0.3s ease;
+}
+
+.service-accordion-image {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #eaf0f6;
+}
+
+.service-accordion-image img {
+  object-fit: cover;
+}
+
+.service-accordion-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.service-detail-label {
+  color: #7895b3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.service-accordion-description h3 {
+  margin: 12px 0;
+  color: #17395f;
+  font-size: 24px;
+}
+
+.service-accordion-description p {
+  color: #65758a;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.service-accordion-description .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@keyframes serviceReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .services-accordion {
+    margin-top: 30px;
+  }
+
+  .service-accordion-trigger {
+    gap: 14px;
+    padding: 20px 4px;
+  }
+
+  .service-accordion-title {
+    font-size: 17px;
+  }
+
+  .service-accordion-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 4px 4px 28px;
+  }
+
+  .service-accordion-image {
+    min-height: 210px;
+  }
+
+  .service-accordion-description h3 {
+    font-size: 21px;
+  }
+}
+
 
