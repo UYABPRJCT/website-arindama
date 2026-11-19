@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: 'Arindama',
   tagline: 'Mitra Strategis untuk Layanan Fasilitas',
   businessCategory: 'Jasa pelayanan, facility services, dan penyediaan sumber daya manusia.',
-  logoPath: '/images/logo.png',
+  logoPath: '/images/logo-arindama-header.png',
   whatsappNumber: '6285604036090',
   whatsappDisplay: '0856-0403-6090',
   email: 'pt.arindamatunggamadani@gmail.com',
