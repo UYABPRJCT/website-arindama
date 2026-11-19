@@ -532,7 +532,7 @@ export function CorporateSite() {
                     aria-label="Instagram"
                     rel="noreferrer"
                   >
-                    IG
+                    Instagram
                   </a>
                 )}
 
